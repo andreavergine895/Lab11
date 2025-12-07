@@ -28,8 +28,7 @@ class DAO:
     def get_connessioni_fino_anno(year:int):
 
         conn=DBConnect.get_connection()
-        result = []
-
+        result = []  #creo lista risultati
         cursor = conn.cursor(dictionary=True)
         query = "SELECT * FROM connessione WHERE anno <= %s"
         cursor.execute(query, (year,))

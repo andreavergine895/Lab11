@@ -68,7 +68,7 @@ class Model:
         a= self.get_reachable_bfs_tree(start)
         b=self.get_reachable_recursive(start)
 
-        return b
+        return b #funziona ugualmente con a
 
     def get_reachable_bfs_tree(self, start):
         #La bfs_tree è un grafo radicato nel nodo 'start'.
