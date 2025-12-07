@@ -1,6 +1,6 @@
 import networkx as nx
 from database.dao import DAO
-from model.rifugio import Rifugio
+
 
 
 class Model:
@@ -65,5 +65,32 @@ class Model:
 
         return a
         """
+        a= self.get_reachable_bfs_tree(start)
+        b=self.get_reachable_recursive(start)
 
-        # TODO
+        return b
+
+    def get_reachable_bfs_tree(self, start):
+        #La bfs_tree è un grafo radicato nel nodo 'start'.
+        #Ritorna la lista dei nodi raggiungibili, escluso il nodo iniziale.
+        bfs_tree= nx.bfs_tree(self.G, start)
+        nodes= list(bfs_tree.nodes)
+        nodes.remove(start)
+        return nodes
+
+
+    def get_reachable_recursive(self, start):
+        visitati= set()
+        self.DFS_ricorsione(start, visitati)
+
+        visitati.discard(start) #dobbiamo escludere lo start per la consegna
+        return list(visitati)
+
+
+    def DFS_ricorsione(self, node, visitati):
+        visitati.add(node)
+
+        for nodo in self.G.neighbors(node):
+            if nodo not in visitati:
+                self.DFS_ricorsione(nodo, visitati)
+
