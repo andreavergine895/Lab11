@@ -83,7 +83,7 @@ class Model:
         visitati= set()
         self.DFS_ricorsione(start, visitati)
 
-        visitati.discard(start) #dobbiamo escludere lo start secondo la nostra consegna
+        visitati.discard(start) #dobbiamo escludere lo start secondo la consegna
         return list(visitati)
 
 
