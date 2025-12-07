@@ -12,7 +12,7 @@ class DAO:
     def get_all_rifugi():
 
         conn=DBConnect.get_connection()
-        result={}
+        result={}  #creo diz risultati
 
         cursor=conn.cursor(dictionary=True)
         query= "SELECT * FROM rifugio"
@@ -28,7 +28,7 @@ class DAO:
     def get_connessioni_fino_anno(year:int):
 
         conn=DBConnect.get_connection()
-        result = []  #creo lista risultati
+        result = []  #creo la lista dei risultati
         cursor = conn.cursor(dictionary=True)
         query = "SELECT * FROM connessione WHERE anno <= %s"
         cursor.execute(query, (year,))

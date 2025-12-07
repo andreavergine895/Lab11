@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-#creo dataclass rifugio
+#creo la dataclass rifugio
 @dataclass
 class Rifugio:
     id: int

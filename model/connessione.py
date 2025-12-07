@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-#creo dataclass Connessione
+#creo la dataclass Connessione
 @dataclass
 class Connessione:
     id: int
