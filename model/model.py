@@ -90,7 +90,7 @@ class Model:
     def DFS_ricorsione(self, node, visitati):
         visitati.add(node)
 
-        for nodo in self.G.neighbors(node):
-            if nodo not in visitati:
-                self.DFS_ricorsione(nodo, visitati)
+        for nod in self.G.neighbors(node):
+            if nod not in visitati:
+                self.DFS_ricorsione(nod, visitati)
 
